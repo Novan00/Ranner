@@ -9,7 +9,7 @@ public class BackGroundMover : MonoBehaviour
     private RawImage _image;
     private float _imagePositionX;
 
-    private void Start()
+    private void Awake()
     {
         _image = GetComponent<RawImage>();
     }
@@ -24,3 +24,4 @@ public class BackGroundMover : MonoBehaviour
         _image.uvRect = new Rect(_imagePositionX, 0, _image.uvRect.width, _image.uvRect.height);
     }
 }
+

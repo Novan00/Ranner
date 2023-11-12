@@ -11,6 +11,11 @@ public class GameOverScreen : MonoBehaviour
 
     private CanvasGroup _gameOverGroup;
 
+    private void Awake()
+    {
+        _gameOverGroup = GetComponent<CanvasGroup>();
+    }
+
     private void OnEnable()
     {
         _playerHealth.Died += OnDied;
@@ -20,7 +25,6 @@ public class GameOverScreen : MonoBehaviour
 
     private void Start()
     {
-        _gameOverGroup = GetComponent<CanvasGroup>();
         _gameOverGroup.alpha = 0;
     }
 

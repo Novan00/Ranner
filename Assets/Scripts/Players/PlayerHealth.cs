@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int _maxHealth;
 
     public int Health => _health;
-    public int MaxHealth => _maxHealth; 
+    public int MaxHealth => _maxHealth;
 
     public event Action<int> HealthChanged;
     public event Action Died;
@@ -32,9 +32,8 @@ public class PlayerHealth : MonoBehaviour
         {
             _health++;
 
+            HealthChanged?.Invoke(_health);
         }
-
-        HealthChanged?.Invoke(_health);
     }
 
     public void Die()
